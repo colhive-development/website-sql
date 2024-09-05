@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import { Toaster } from "@/components/ui/sonner";
-import { ThemeProvider } from "@/components/providers/theme-provider";
+import { Navbar } from "@/components/navbar";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -28,15 +27,8 @@ export default function RootLayout({
           montserrat.variable,
         )}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-          <Toaster />
-        </ThemeProvider>
+        <Navbar/>
+        {children}
       </body>
     </html>
   );
