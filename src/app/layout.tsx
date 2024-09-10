@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Navbar } from "@/components/navbar";
+import Providers from "./providers";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -26,9 +27,10 @@ export default function RootLayout({
           "min-h-screen bg-background font-montserrat antialiased",
           montserrat.variable,
         )}
-      >
-        <Navbar/>
-        {children}
+        >
+        <Providers>
+          {children}
+        </Providers>
       </body>
     </html>
   );

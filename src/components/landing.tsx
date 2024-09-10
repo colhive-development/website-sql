@@ -1,17 +1,13 @@
 import React from 'react';
 import Link from "next/link";
-import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink } from "@/components/ui/breadcrumb";
 import { Input } from "@/components/ui/input";
-import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuItem } from "@/components/ui/dropdown-menu";
 import { CloverIcon, SearchIcon } from 'lucide-react';
-
 
 const Footer: React.FC = () => (
   <footer className="border-t bg-background">
-    <div className="container flex flex-col items-center justify-between gap-4 py-10 md:h-24 md:flex-row md:py-0">
-      <div className="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
+    <div className="container flex flex-col items-center justify-center gap-4 py-10 md:h-24 md:flex-row md:py-0">
+      <div className="flex px-8 gap-2 md:px-0">
         <CloverIcon className="h-6 w-6" />
         <p className="text-center text-sm leading-loose md:text-left">
           Built by Colhive. The source code is available on{" "}
@@ -28,13 +24,13 @@ const Footer: React.FC = () => (
 const HeroSection: React.FC = () => (
   <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
     <div className="container px-4 md:px-6">
-      <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
+      <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 xl:gap-24">
         <img
-          src="/api/placeholder/550/310"
+          src="/hero.png"
           width={550}
           height={310}
           alt="Hero"
-          className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last border border-black"
+          className="w-full h-auto flex-shrink-0 object-cover object-center border border-foreground rounded-lg lg:order-last md:max-w-[400px] lg:max-w-[600px]"
         />
         <div className="flex flex-col justify-center space-y-4">
           <div className="space-y-2">
@@ -48,16 +44,9 @@ const HeroSection: React.FC = () => (
           </div>
           <div className="w-full max-w-sm space-y-2">
             <section className="flex gap-4">
-              {/* <Input type="email" placeholder="Enter your email" className="max-w-lg flex-1" /> */}
-              <Button className='hover:text-black hover:bg-white border'>Explore</Button>
-              <Button className='text-foreground hover:bg-black border hover:text-white bg-background'>Sign Up</Button>
+              <Button className='hover:text-foreground hover:bg-background border'>Explore</Button>
+              <Button className='text-foreground hover:bg-foreground border hover:text-background bg-background'>Sign Up</Button>
             </section>
-            {/* <p className="text-xs text-muted-foreground">
-              Sign up to get started with Colhive.{" "}
-              <Link href="#" className="underline underline-offset-2">
-                Terms &amp; Conditions
-              </Link>
-            </p> */}
           </div>
         </div>
       </div>
@@ -66,18 +55,17 @@ const HeroSection: React.FC = () => (
 );
 
 const FeatureSection: React.FC = () => (
-  <section className="w-full py-12 md:py-24 lg:py-32">
+  <section className="w-full py-12 md:py-18 lg:py-28 border-t">
     <div className="container space-y-12 px-4 md:px-6">
       <div className="flex flex-col items-center justify-center space-y-4 text-center">
         <div className="space-y-2">
-          <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">New Features</div>
+          <div className="inline-block rounded-lg bg-muted px-3 py-1 mb-6 text-sm">New Features</div>
           <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
             Faster iteration. More innovation.
           </h2>
           <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
             Colhive is the platform for rapid progress. Let your team focus on shipping features instead of
-            managing infrastructure with automated CI/
-            {/* <Header /> */}CD, built-in testing, and integrated collaboration.
+            managing infrastructure with automated CI/CD, built-in testing, and integrated collaboration.
           </p>
         </div>
       </div>
@@ -109,7 +97,7 @@ const FeatureSection: React.FC = () => (
 );
 
 const CTASection: React.FC = () => (
-  <section className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+  <section className="w-full py-12 md:py-24 lg:py-32 border-t">
     <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
       <div className="space-y-3">
         <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
@@ -137,8 +125,8 @@ const CTASection: React.FC = () => (
 
 export default function LandingPage() {
   return (
-    <div className="flex min-h-screen w-full flex-col bg-background">
-      {/* <Header /> */}
+    <div className="flex min-h-screen max-w-screen flex-col bg-background">
+      {/* <Header /> */} 
       <main className="flex-1">
         <HeroSection />
         <FeatureSection />

@@ -25,3 +25,9 @@ export const company = pgTable("company", {
   emailVerified: boolean("email_verified").default(false),
   image: text("image"),
 });
+
+export type User = typeof users.$inferSelect;
+export type NewUser = typeof users.$inferInsert;
+
+export type Company = typeof company.$inferSelect;
+export type NewCompany = typeof company.$inferInsert;

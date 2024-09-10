@@ -20,3 +20,9 @@ export const subProject = pgTable("sub_project", {
     onDelete: "cascade",
   }),
 });
+
+export type Project = typeof project.$inferSelect;
+export type NewProject = typeof project.$inferInsert;
+
+export type SubProject = typeof subProject.$inferSelect;
+export type NewSubProject = typeof subProject.$inferInsert;

@@ -5,17 +5,13 @@ import { Button } from "./ui/button"
 import { LogOut } from "lucide-react"
 
 export const NavbarButtons = ({text, fn , href}:{text:string ,fn? : () => void , href?:string}) =>{
-    return (
-        <div>
-            <Button 
-                onClick={()=>{
-                    fn ? fn() : href ? window.location.href = href : null
-                }}
-                variant={"ghost"}
-            >{text}
-            </Button>
-        </div>
-    )
+    return <Button 
+        onClick={()=>{
+            fn ? fn() : href ? window.location.href = href : null
+        }}
+        variant={"ghost"}
+    >{text}
+    </Button>
 }
 export const LogoutButton = () => {
     return <Button variant="ghost" onClick={async()=>{await signOut(); }} className="w-full h-full flex gap-3 justify-start">

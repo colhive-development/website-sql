@@ -20,7 +20,7 @@ export function ProfileMenu({session, }:{session : Session | null }) {
         <DropdownMenuContent className="w-56 self-start flex flex-col">
           <DropdownMenuItem className="p-0"
            >
-            <Button variant="ghost" href="" className="w-full h-full flex gap-3 justify-start">
+            <Button variant="ghost" href="/profile" className="w-full h-full flex gap-3 justify-start">
               <UserRoundPen size={22} />Profile
             </Button>
           </DropdownMenuItem>
