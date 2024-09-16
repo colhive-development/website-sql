@@ -3,28 +3,26 @@
 import { Navbar } from "@/components/navbar";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import {SessionProvider, useSession} from "next-auth/react"
-import { usePathname } from "next/navigation";
 import { ReactNode } from "react";
 import { toast, Toaster } from "sonner";
+import {RecoilRoot, useRecoilValue} from "recoil"
+import { ClientWrapper } from "./wrapper";
 
-export default function Providers({ children}:{children : ReactNode}) {
-  const {data:session , status} = useSession()
-  if(status === "unauthenticated"){
-      toast.error("Session not found. Try logging in again.")
-  }
-  const path = usePathname()
-  if(session) return <SessionProvider>
-        {/* <RecoilRoot> */}
+export default function Providers({ children }:{children : ReactNode}) {
+
+  return <SessionProvider>
+        <RecoilRoot>
           <Toaster expand position="top-right" offset={3} duration={3000}/>
           <ThemeProvider
             attribute="class"
             defaultTheme="dark"
             enableSystem
           >
-          <Navbar session={true} path={path}/>
-            {children}
+            <ClientWrapper>
+              {children}
+            </ClientWrapper>
           </ThemeProvider>
-        {/* </RecoilRoot> */}
+        </RecoilRoot>
       </SessionProvider>
     }
    

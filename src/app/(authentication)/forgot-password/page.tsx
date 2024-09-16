@@ -5,20 +5,9 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
-export default function Signin() {
-    const [email , setEmail] = useState("")
-    const [password , setPassword] = useState("")
-    
-    const handleSubmit = async () => {
-        const [email , setEmail] = useState("")
-        const [password , setPassword] = useState("")
-        if(!email || !password) toast.error("Please fill all the fields")
-        // TODO : upload image to firebase before calling fn and return a url
-        // @ts-ignore
-        toast.promise(await signin({email , password}) , { loading: "Logging in..." , success: "Logged in successfully" , error: "Failed to login"})
-    }
-
-    return <div className="w-full lg:grid lg:min-h-[600px] lg:grid-cols-2 xl:min-h-[800px] container py-20">
+export default function ForgotPassword() {
+  return (
+    <div className="w-full lg:grid lg:min-h-[600px] lg:grid-cols-2 xl:min-h-[800px] container py-20">
       <div className="flex items-center justify-center py-16">
         <div className="mx-auto grid w-[400px] gap-8">
           <div className="grid gap-4 text-center">
@@ -80,4 +69,5 @@ export default function Signin() {
         />
       </div>
     </div>
+  )
 }
