@@ -4,16 +4,15 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { useState } from "react"
+import { toast } from "sonner"
 
 export default function Signin() {
     const [email , setEmail] = useState("")
     const [password , setPassword] = useState("")
-    
+
     const handleSubmit = async () => {
-        const [email , setEmail] = useState("")
-        const [password , setPassword] = useState("")
         if(!email || !password) toast.error("Please fill all the fields")
-        // TODO : upload image to firebase before calling fn and return a url
         // @ts-ignore
         toast.promise(await signin({email , password}) , { loading: "Logging in..." , success: "Logged in successfully" , error: "Failed to login"})
     }
