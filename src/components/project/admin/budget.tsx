@@ -1,7 +1,7 @@
 'use client'
 
-import { Card ,CardContent ,CardHeader, CardTitle} from "../ui/card"
-import { Progress } from "../ui/progress"
+import { Card ,CardContent ,CardHeader, CardTitle} from "../../ui/card"
+import { Progress } from "../../ui/progress"
 
 export default function Budget({ budget }:{
     budget: number

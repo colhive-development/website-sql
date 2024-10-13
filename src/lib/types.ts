@@ -1,6 +1,6 @@
-import { User } from "@/database/schema/users";
+import { Individuals } from "@/database/schema/users";
 
-export interface IProject {
+export interface IProjectAdmin {
   id: string
   name: string
   description: string
@@ -12,22 +12,23 @@ export interface IProject {
   deadline: Date
   completed: boolean
   completed_at: Date | null
-  tasks: Task[]
-  files: File[]
-  risks: Risk[]
-  activities: Activity[]
+  tasks: Task[] | []
+  files: File[] | []
+  activities: Activity[] | []
+  comments : Comment[] | []
+  risks: Risk[] | []
   budget: {
     total: number
     spent: number
   }
-  settings: {
+  settings?: {
     isPublic: boolean
     allowGuestComments: boolean
     requireApprovalForTasks: boolean
   }
-  comments : Comments[]
 }
-export interface UserWithRole extends Omit<User , "password"> {
+export interface IProjectUser extends Omit<IProjectAdmin, "risks" | "budget" | "settings" | "updated_at"> {}
+export interface UserWithRole extends Omit<Individuals , "password"> {
   role: 'admin' | 'member'
 }
 
@@ -47,13 +48,6 @@ export interface File {
   uploadedBy: string
   uploadedAt: Date
 }
-export interface Comments {
-  id: string
-  text: string
-  author: UserWithRole
-  createdAt?: Date,
-  updatedAt?: Date
-}
 export interface Risk {
   id: string
   description: string
@@ -71,6 +65,6 @@ export interface Comment {
   id: string
   text: string
   author: UserWithRole
-  createdAt?: Date,
-  updatedAt?: Date
+  createdAt?: Date | null,
+  updatedAt?: Date | null
 }

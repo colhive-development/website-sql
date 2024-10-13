@@ -2,8 +2,8 @@
 
 import { Risk } from "@/lib/types";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { ScrollArea } from "../ui/scroll-area";
-import { Button } from "../ui/button";
+import { ScrollArea } from "../../ui/scroll-area";
+import { Button } from "../../ui/button";
 import { PlusIcon } from "lucide-react";
 
 export default function RiskManager({ risks }:{

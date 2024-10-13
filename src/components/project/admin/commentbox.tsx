@@ -2,8 +2,8 @@
 
 import { Comment } from "@/lib/types";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Textarea } from "../ui/textarea";
-import { Button } from "../ui/button";
+import { Textarea } from "../../ui/textarea";
+import { Button } from "../../ui/button";
 import { useState } from "react";
 import { MessageCircleIcon } from "lucide-react";
 
