@@ -8,7 +8,7 @@ import React from "react";
 export default async function Home() {
   const session = await auth();
   return (
-    <div className="max-w-screen flex min-h-screen flex-col bg-background">
+    <div className="max-w-screen overflow-hidden flex min-h-screen flex-col bg-background">
       <main className="flex-1">
         <div>{JSON.stringify(session)}</div>
         <div>

@@ -12,7 +12,7 @@ export const Form = ({
   inputs: {
     label: string;
     name: string;
-    type?: "text" | "password" | "email" | "file" | "date";
+    type?: "text" | "password" | "email" | "file" | "date" | "textarea"
   }[];
   submitText? : string
   children? : ReactNode

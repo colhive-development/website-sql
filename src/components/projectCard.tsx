@@ -1,8 +1,8 @@
 "use client"
-import { IProject } from '@/lib/types';
+import { IProjectAdmin } from '@/lib/types';
 import { CalendarIcon, CheckCircleIcon, ClockIcon , GroupIcon } from 'lucide-react';
 
-const ProjectCard: React.FC<{ project: IProject }> = ({ project }) => {
+const ProjectCard: React.FC<{ project: IProjectAdmin }> = ({ project }) => {
     const formatDate = (date: Date) => {
       return new Date(date).toLocaleDateString('en-US', {
         year: 'numeric',

@@ -4,7 +4,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useState } from "react";
 import { Plus, Trash } from "lucide-react";
-import { Button } from "../ui/button";
+import { Button } from "../../ui/button";
 
 interface Task {
   id: string;

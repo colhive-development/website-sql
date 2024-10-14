@@ -12,7 +12,7 @@ export default function Providers({ children }:{children : ReactNode}) {
 
   return <SessionProvider>
         <RecoilRoot>
-          <Toaster expand position="top-right" offset={3} duration={3000}/>
+          <Toaster expand position="top-right" offset={3} duration={5000}/>
           <ThemeProvider
             attribute="class"
             defaultTheme="dark"

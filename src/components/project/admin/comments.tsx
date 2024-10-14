@@ -1,11 +1,11 @@
 import React from 'react'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Textarea } from '../ui/textarea'
-import { Button } from '../ui/button'
-import { Comments } from '@/lib/types'
-import { ScrollArea } from '../ui/scroll-area'
+import { Textarea } from '../../ui/textarea'
+import { Button } from '../../ui/button'
+import { Comment } from '@/lib/types'
+import { ScrollArea } from '../../ui/scroll-area'
 
-export const CommentsArea = ({comments}:{comments:Comments[]}) => {
+export const CommentsArea = ({comments}:{comments:Comment[]}) => {
     return <Card>
     <CardHeader>
     <CardTitle>Recent comments</CardTitle>
