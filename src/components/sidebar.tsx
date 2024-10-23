@@ -50,24 +50,7 @@ export const SideBar: React.FC = () => {
     setSelected(currentPath || "dashboard");
   }, [path]);
 
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(max-width: 767px)');
-
-    const handleScreenResize = () => {
-      if (mediaQuery.matches) {
-        setIsOpen(false);
-      }
-    };
-
-    mediaQuery.addEventListener('change', handleScreenResize);
-
-    return () => {
-      mediaQuery.removeEventListener('change', handleScreenResize);
-    };
-  }, [setIsOpen]);
-
   const handleOpen = () => setIsOpen(!isOpen);
-
 
   return (
     <div className={`border-r mt-14 fixed bg-background h-screen hidden md:block transition-all duration-500 ease-in-out ${isOpen ? 'w-60' : 'w-16'}`}>

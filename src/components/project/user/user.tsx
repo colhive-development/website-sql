@@ -7,7 +7,7 @@ import TeamMembers from './members';
 import FileViewer from './files';
 import ActivityFeed from './activity';
 import CommentSection from './comment';
-import ProjectHeader from '../admin/header';
+import ProjectHeader from './header';
 
 export default function UserProjectPage({ projectId }: { projectId: string }) {
   // Mock data for the user view

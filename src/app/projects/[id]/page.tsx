@@ -4,10 +4,10 @@ import UserProjectPage from '@/components/project/user/user'
 
 const Project = ({ params }: { params: { id: string } }) => {
   const projectId = params.id
-  const userRole: "admin" | "member" = "admin"
-
+  const userRole : "member" | "admin" = "admin"
   return <>
-  {userRole === "admin" ? <AdminProjectPage projectId={projectId} /> : <UserProjectPage projectId={projectId} />}
+  {/* @ts-ignore */}
+  {userRole === "admin" ? <AdminProjectPage projectId={projectId} /> : userRole === "member" ? <UserProjectPage projectId={projectId} /> : null}
   </>
 }
 

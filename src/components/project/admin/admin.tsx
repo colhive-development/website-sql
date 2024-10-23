@@ -10,9 +10,9 @@ import CommentsSection from './commentbox';
 import { Activity, IProjectAdmin, Task, UserWithRole, Risk, File, Comment } from '@/lib/types';
 import { CommentsArea } from './comments';
 
-export default function AdminProjectPage() {
+export default function AdminProjectPage({ projectId }: { projectId: string }) {
   const project: IProjectAdmin = {
-    id: "1",
+    id: projectId,
     name: "Project Alpha",
     description: "A groundbreaking project that will revolutionize the industry.",
     image: "/placeholder.svg?height=100&width=100",

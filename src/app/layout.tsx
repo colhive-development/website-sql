@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import Providers from "./providers";
+import { ClientWrapper } from "./wrapper";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -28,7 +29,9 @@ export default function RootLayout({
         )}
         >
         <Providers>
+          <ClientWrapper>
           {children}
+          </ClientWrapper>
         </Providers>
       </body>
     </html>

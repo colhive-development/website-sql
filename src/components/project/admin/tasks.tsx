@@ -3,8 +3,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useState } from "react";
-import { Plus, Trash } from "lucide-react";
-import { Button } from "../../ui/button";
+import { Trash } from "lucide-react";
 
 interface Task {
   id: string;

@@ -1,16 +1,13 @@
 import { LogoHeader } from "./headers"
 import { NavbarButtons } from "./buttons"
-import { getSession } from "next-auth/react"
 import { ProfileMenu } from "./profileMenu"
 import { MobileSideBar } from "./mobileSidebar"
-import { usePathname } from "next/navigation"
 import { ModeToggle } from "./global/mode-toggle"
 import { Session } from "next-auth"
-import { toast } from "sonner"
 export const Navbar =  ({session , path}:{session : Session | null | true , path : string}) => {
 
     return (
-        <nav className="h-14 fixed xl:px-60 lg:px-48 md:px-28 sm:px-12 px-4  md:py-2 py-1 flex items-center justify-between bg-background w-full border-b">
+        <nav className="z-10 h-14 fixed xl:px-60 lg:px-48 md:px-28 sm:px-12 px-4  md:py-2 py-1 flex items-center justify-between bg-background w-full border-b">
             <section>
                 <LogoHeader/>
             </section>

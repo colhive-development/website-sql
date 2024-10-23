@@ -1,11 +1,9 @@
 "use client"
-
-import { Navbar } from "@/components/navbar";
 import { ThemeProvider } from "@/components/providers/theme-provider";
-import {SessionProvider, useSession} from "next-auth/react"
+import {SessionProvider} from "next-auth/react"
 import { ReactNode } from "react";
-import { toast, Toaster } from "sonner";
-import {RecoilRoot, useRecoilValue} from "recoil"
+import { Toaster } from "sonner";
+import {RecoilRoot} from "recoil"
 import { ClientWrapper } from "./wrapper";
 
 export default function Providers({ children }:{children : ReactNode}) {
@@ -18,9 +16,9 @@ export default function Providers({ children }:{children : ReactNode}) {
             defaultTheme="dark"
             enableSystem
           >
-            <ClientWrapper>
+            {/* <ClientWrapper> */}
               {children}
-            </ClientWrapper>
+            {/* </ClientWrapper> */}
           </ThemeProvider>
         </RecoilRoot>
       </SessionProvider>
