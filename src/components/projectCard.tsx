@@ -26,15 +26,13 @@ const ProjectCard: React.FC<{ project: IProjectAdmin }> = ({ project }) => {
             <span className="text-sm ">{project.members.length} members</span>
           </div>
           <div className="flex items-center mb-2">
-            <CalendarIcon className="w-5 h-5 mr-2 text-gray-500" />
-            <span className="text-sm ">Deadline: {formatDate(project.deadline)}</span>
+            {/* <CalendarIcon className="w-5 h-5 mr-2 text-gray-500" /> */}
+            <span className="text-sm flex "><ClockIcon className="w-5 h-5 mr-2 text-yellow-500" />{formatDate(project.deadline)}</span>
           </div>
           <div className="flex items-center">
-            {project.completed ? (
-              <CheckCircleIcon className="w-5 h-5 mr-2 text-green-500" />
-            ) : (
-              <ClockIcon className="w-5 h-5 mr-2 text-yellow-500" />
-            )}
+            {project.completed && <>
+              <CheckCircleIcon className="w-5 h-5 mr-2 text-green-500" /> {project.completed}
+              </>}
             {project.completed_at && <span className="text-sm ">
               {project.completed ? `Completed on ${formatDate(project.completed_at)}` : 'In Progress'}
             </span>}

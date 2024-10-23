@@ -3,10 +3,12 @@ import { Input } from "@/components/ui/input";
 import { auth, signOut } from "@/lib/auth";
 import { CloverIcon } from "lucide-react";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import React from "react";
 
 export default async function Home() {
   const session = await auth();
+  if(session) redirect("/dashboard")
   return (
     <div className="max-w-screen overflow-hidden flex min-h-screen flex-col bg-background">
       <main className="flex-1">

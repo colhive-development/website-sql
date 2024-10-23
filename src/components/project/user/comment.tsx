@@ -28,9 +28,9 @@ const CommentSection: React.FC<{ comments: Comment[], currentUser: UserWithRole 
   };
 
   return (
-    <div className="p-4 rounded-lg shadow">
+    <div className="p-4 rounded-lg shadow border">
       <h2 className="text-xl font-bold mb-4">Comments</h2>
-      <ScrollArea className="h-[300px] mb-4">
+      <ScrollArea className="h-[250px] mb-4">
         <ul className="space-y-4 pr-4">
           {commentsState.map(comment => (
             <li key={comment.id} className="p-2 rounded flex justify-between">

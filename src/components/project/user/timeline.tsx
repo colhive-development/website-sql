@@ -5,7 +5,7 @@ const ProjectTimeline: React.FC<{ tasks: Task[] }> = ({ tasks }) => {
     return (
       <Card>
         <CardHeader>
-          <CardTitle>Project Timeline</CardTitle>
+          <CardTitle>Other Tasks</CardTitle>
         </CardHeader>
         <CardContent className="space-y-2">
           {tasks.map(task => (
